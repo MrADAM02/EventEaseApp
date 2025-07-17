@@ -1,10 +1,11 @@
 @page "/events"
 @inject NavigationManager Navigation
+@using EventEaseApp.Components
 
 <h2>Upcoming Events</h2>
 
-<Virtualize Items="@Events" Context="evt">
-    <EventCard Name="@evt.Name" Date="@evt.Date" Location="@evt.Location" />
+<Virtualize Items="Events" Context="evt">
+    <EventCard Name="@(evt.Name)" Date="@(evt.Date)" Location="@(evt.Location)" />
 </Virtualize>
 
 
