@@ -1,0 +1,19 @@
+@page "/events/{Id:int}"
+@inject NavigationManager Nav
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+}
+
+<h2>Event Details</h2>
+
+@if (Id <= 0)
+{
+    <p>Invalid event ID. Redirecting...</p>
+    Nav.NavigateTo("/404", true);
+}
+else
+{
+    <p>You're viewing event ID: @Id</p>
+}

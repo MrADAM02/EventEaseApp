@@ -1,0 +1,18 @@
+@code {
+    [Parameter] public string Name { get; set; }
+    [Parameter] public DateTime Date { get; set; }
+    [Parameter] public string Location { get; set; }
+}
+
+@if (string.IsNullOrWhiteSpace(Name) || Date == default || string.IsNullOrWhiteSpace(Location))
+{
+    <p class="text-danger">Invalid event data.</p>
+}
+else
+{
+    <div class="event-card">
+        <h3>@Name</h3>
+        <p><strong>Date:</strong> @Date.ToShortDateString()</p>
+        <p><strong>Location:</strong> @Location</p>
+    </div>
+}

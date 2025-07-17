@@ -1,0 +1,13 @@
+@page "/attendance"
+@inject UserSession Session
+
+<h2>Attendance Tracker</h2>
+
+@if (Session.IsRegistered)
+{
+    <p>@Session.UserName is marked as attending.</p>
+}
+else
+{
+    <p>Please register first.</p>
+}
